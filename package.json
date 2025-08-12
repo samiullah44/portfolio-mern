@@ -1,0 +1,30 @@
+{
+  "name": "portfolio-mern",
+  "version": "1.0.0",
+  "description": "Modern artistic MERN portfolio website for Sami Ullah",
+  "scripts": {
+    "dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
+    "client:dev": "cd client && npm run dev",
+    "server:dev": "cd server && npm run dev",
+    "build": "cd client && npm run build && cd ../server && npm run build",
+    "start": "cd server && npm start",
+    "seed": "cd server && npm run seed",
+    "lint": "cd client && npm run lint && cd ../server && npm run lint",
+    "format": "cd client && npm run format && cd ../server && npm run format",
+    "test": "cd server && npm test",
+    "docker:dev": "docker-compose up",
+    "deploy:build": "npm run build && zip -r portfolio-deploy.zip client/dist server package.json README.md .env.example docker-compose.yml Dockerfile"
+  },
+  "keywords": [
+    "portfolio",
+    "mern",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "Sheikh Samiullah",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
